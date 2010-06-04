@@ -1,0 +1,31 @@
+This is WMI library for IronRuby
+
+Use Like below
+ require 'ironruby-wmi'
+
+ processes = WMI::Win32_Process.get_instances
+ processes.each do |proces|
+   puts proess.caption
+ end
+
+Or Asynchronous version
+ require 'ironruby-wmi'
+
+ WMI::Win32_Process.get_instances_async do |process|
+   puts process.caption
+ end
+
+Or
+ require 'ironruby-wmi'
+
+ WMI::Win32_Process.get_instances_async do |process|
+   puts self.caption
+ end
+
+Or 
+ require 'ironruby-wmi'
+
+ WMI::Win32_Process.get_instances_async do |process|
+   puts caption
+ end
+
